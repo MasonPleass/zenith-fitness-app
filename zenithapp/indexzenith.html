@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenith Fitness App</title>
+    <link rel="stylesheet" href="stylezenith.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div id="home" class="page">
+            <header>
+                <img src="imgzenith/banner.png" alt="Zenith Fitness Banner" class="banner">
+            </header>
+            <div class="stylish-line"></div>
+            <div class="home-page-content">
+                <!-- Welcome Message Box -->
+                <div class="welcome-box">
+                    <h3>Hello, [User's Name]</h3>
+                    <p>Welcome to Zenith Fitness!</p>
+                </div>
+            
+                <!-- Smaller Content Boxes -->
+                <div class="content-boxes">
+                    <div class="box">
+                        <h3>Quick Stats</h3>
+                        <p>Steps Today: 7,500</p>
+                        <p>Calories Burned: 300</p>
+                    </div>
+                    <div class="box">
+                        <h3>Daily Workout</h3>
+                        <p>30-minute HIIT workout</p>
+                        <button class="start-workout-btn">Start Now</button>
+                    </div>
+                    <div class="box">
+                        <h3>Progress</h3>
+                        <p>You're 70% towards your weekly goal!</p>
+                    </div>
+                    <div class="box">
+                        <h3>New Goal</h3>
+                        <p>Set your goal for this week and keep pushing forward!</p>
+                    </div>
+                    <div class="log-workout-section">
+                        <div class="next-workout">
+                            <p>Next Workout</p>
+                        </div>
+                        <div class="log-workout-button">
+                            <button>Log Workout</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div id="progress" class="page">Progress Tracker</div>
+        <div id="logworkout" class="page">Log Workout</div>
+        <div id="payments" class="page">Payments</div>
+        <div id="profile" class="page">Profile</div>
+    </div>
+    
+    
+    <nav class="bottom-nav">
+        <ul>
+            <li><a href="#home" data-page="home" onclick="showPage('home')"><i class="fas fa-home"></i></a></li>
+            <li><a href="#progress" data-page="progress" onclick="showPage('progress')"><i class="fas fa-chart-line"></i></a></li>
+            <li class="log"><a href="#logworkout" data-page="logworkout" onclick="showPage('logworkout')"><i class="fas fa-pen-alt"></i></a></li>
+            <li><a href="#payments" data-page="payments" onclick="showPage('payments')"><i class="fas fa-dollar-sign"></i></a></li>
+            <li><a href="#profile" data-page="profile" onclick="showPage('profile')"><i class="fas fa-user-circle"></i></a></li>
+        </ul>
+    </nav>
+    
+
+    <script src="scriptzenith.js"></script>
+</body>
+</html>
+

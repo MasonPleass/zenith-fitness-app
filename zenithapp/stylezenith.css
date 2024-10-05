@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #212121;
+    color: #7f6937;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#home {
+    padding-top: 100px; /* Push the home content down, accounting for the fixed header */
+    position: relative;
+    height: 100vh;
+}
+
+/* Header remains fixed */
+#home header {
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 10;
+}
+
+#home .banner {
+    width: 100%;
+    height: auto;
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    bottom: -400px; /* Adjust position to ensure it's at the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200vw; /* Adjust width for better coverage */
+    height: 100vh; /* Adjust height for prominent glow */
+    background: radial-gradient(circle, rgba(85, 174, 159, 0.8) 0%, rgba(85, 174, 159, 0) 60%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.container {
+    
+    padding: 0 0px; /* Optional padding for the sides */
+}
+
+.page {
+    display: none; /* Default: hide all pages */
+    padding: 20px;
+    height: 100vh; /* Ensure pages cover full viewport height */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.page-active {
+    display: block; /* Only display the active page */
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #222831;
+    border-top: 1px solid #0d7377; /* Teal accent */
+}
+
+.bottom-nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.bottom-nav ul li {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.bottom-nav ul li a {
+    color: #7f6937; /* Gold text */
+    text-decoration: none;
+}
+
+.bottom-nav ul li.log a {
+    font-size: 1.2em;
+    color: #57b1a2; /* Teal for log workout */
+}
+
+.bottom-nav ul li a i {
+    font-size: 1.5em;
+    color: #7f6937; /* Gold text for icons */
+}
+
+.bottom-nav ul li a:hover i {
+    color: #55ae9f; /* Teal on hover */
+}
+
+.bottom-nav ul li a.active i {
+    color: #57b1a2; /* Teal for active page */
+}
+
+/* Container for all content on the home page */
+.home-page-content {
+    padding: 20px;
+}
+
+/* Welcome Box Styling */
+.welcome-box {
+    background-color: #2a2a2a;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 15px;
+    margin-bottom: 20px; /* Keep this to adjust spacing under the line */
+    margin-top: 10px; /* Adjust spacing from the line */
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 1.4rem;
+}
+
+/* Content Boxes Styling */
+.content-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between boxes */
+}
+
+/* Smaller content boxes */
+.box {
+    background-color: #2a2a2a;
+    color: #fff;
+    flex-basis: calc(50% - 10px); /* Ensure boxes take up the right width */
+    padding: 10px; /* Reduce padding to make room for text */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    height: auto; /* Let height be determined by content */
+    font-size: 1rem; /* Adjust text size to fit */
+}
+
+/* Headings inside boxes */
+.box h3 {
+    font-size: 1.1rem; /* Smaller heading size */
+    margin-bottom: 8px; /* Adjust margin for better fit */
+    color: #57b1a2; /* Keep teal color */
+}
+
+/* Paragraph text inside boxes */
+.box p {
+    font-size: 0.9rem; /* Slightly smaller font for paragraphs */
+    margin: 0; /* Remove default margins */
+}
+
+@media (max-width: 768px) {
+    .welcome-box {
+        font-size: 1.2rem; /* Reduce for smaller screens */
+    }
+
+    .box {
+        font-size: 0.85rem; /* Smaller text in content boxes */
+    }
+
+    .box h3 {
+        font-size: 1rem; /* Adjust heading size */
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-box {
+        font-size: 1rem; /* Further reduce for small screens */
+    }
+
+    .box {
+        font-size: 0.8rem; /* Reduce text size further */
+    }
+
+    .box h3 {
+        font-size: 0.9rem; /* Smaller heading size */
+    }
+}
+
+.stylish-line {
+    width: 80%; /* Adjust width of the line */
+    height: 2px; /* Thickness of the line */
+    background-color: #7f6937; /* Gold color matching the icons */
+    margin: 20px auto; /* Center the line and add spacing */
+    border-radius: 5px; /* Slight rounding for a stylish look */
+    margin-bottom: -10px;
+    
+}
+
+.log-workout-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.next-workout {
+    flex: 1;
+    color: #7f6937;
+    font-size: 1.2rem;
+    padding-left: 20px;
+}
+
+.log-workout-button {
+    flex: 1;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.log-workout-button button {
+    background-color: #57b1a2; /* Different color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    
+}
+
+.log-workout-button button:hover {
+    background-color: #45a18e; /* Slightly darker shade on hover */
+}
